@@ -1,0 +1,7 @@
+<%= form_for @article do |f| %>
+  <%= f.label :title %>
+  <%= f.text_area :title, size: "50x1", class: "form-control" %><br>
+  <%= f.label :text %>
+  <%= f.text_area :text, size: "50x24", class: "form-control" %><br>
+  <%= f.submit class: "btn btn-default navbar-btn" %>
+<% end %>
