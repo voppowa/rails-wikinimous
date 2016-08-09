@@ -5,9 +5,12 @@
         <div class="article-body">
         <h1><%= @article.title %>
           <%= link_to ("<i class='fa fa-pencil'></i>").html_safe, edit_article_path %>
-          <%= link_to ("<i class='fa fa-trash-o'></i>").html_safe, article_path(@article),
+            <% if current_user %>
+            <%= link_to ("<i class='fa fa-trash-o'></i>").html_safe, article_path(@article),
               method: :delete,
               data: { confirm: "Are you sure?" } %>
+
+            <% end %>
         </h1>
           <p><%= @article.text %></p>
         </div>

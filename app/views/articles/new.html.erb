@@ -1,9 +1,16 @@
+
 <div class="container">
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2">
         <div class="article-body">
-          <%= render 'form' %>
+          <% if current_user %>
+            Signed in as <%= current_user.name %> | <%= render 'form' %>
+          <% else %>
+            <%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %>
+          <% end %>
         </div>
       </div>
     </div>
 </div>
+
+
